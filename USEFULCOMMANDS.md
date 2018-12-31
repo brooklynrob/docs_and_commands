@@ -70,7 +70,7 @@ create-react-app sandbox-reason --scripts-version reason-scripts | tee ../../COM
 * list installed and avail releases of OCaml
 	* `opam switch`
 	* Example: `open switch realworld`
-* Put environment in synch: `eval  \`opam config env ``
+* Put environment in synch: `eval  \`opam config env \``
 
 #### UTOP
 ##### `#require` then `open` a library
