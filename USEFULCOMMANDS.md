@@ -70,7 +70,7 @@ create-react-app sandbox-reason --scripts-version reason-scripts | tee ../../COM
 * list installed and avail releases of OCaml
 	* `opam switch`
 	* Example: `open switch realworld`
-* Put environment in synch: `eval `opam config env``
+* Put environment in synch: `eval  \`opam config env ``
 
 #### UTOP
 ##### `#require` then `open` a library
@@ -79,7 +79,7 @@ Example (not lowercase and then capital letter):
 		#require "base";;
 		open Base;;
 	```
-
+Another example:
 	```
 		#require "async";;
 		open Async;
@@ -96,6 +96,8 @@ Example:
   ```
   List.fold_left ~init:0 ~f:(fun acc x -> acc + x) [2; 5; 7];;
   ```
+
+  Another Example:
 
   ```
   utop # let concat (l : string list) : string =
@@ -116,6 +118,7 @@ Shorthand to make bind look/act like a normal `let` statement
 See https://www.reddit.com/r/ocaml/comments/3qmapa/operator/
 `('a -> 'b) -> 'a -> 'b = <fun>`
 
+Example: 
 	```
 		utop # (@@);;
 		- : ('a -> 'b) -> 'a -> 'b = <fun>
