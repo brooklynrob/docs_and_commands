@@ -291,6 +291,7 @@ https://stackoverflow.com/questions/4608187/how-to-reload-bash-profile-from-the-
 
 ## pyenv
 * Maintain multiple versions of python (similar to nvm or opam switch)
+* https://realpython.com/intro-to-pyenv/
 
 ## pipenv
 * https://realpython.com/pipenv-guide/
@@ -363,15 +364,15 @@ print(df_csv.columns)
 ### UTOP
 #### `#require` then `open` a library
 Example (not lowercase and then capital letter):
-	```	
-		#require "base";;
-		open Base;;
-	```
+```	
+#require "base";;
+open Base;;
+```
 Another example:
-	```
-		#require "async";;
-		open Async;
-	```
+```
+#require "async";;
+open Async;
+```
 
 ### `ocamlbuild` examples
 * `ocamlbuild -pkg cohttp-lwt-unix -pkg lwt_ssl get_json_data.byte get_json_data.ml && ./get_json_data.byte`
@@ -528,21 +529,19 @@ kernel.json	kernel.sh
 
 ## Clojure
 ```
-  $ lein uberjar
+$ lein uberjar
 
-  $ java -jar   /Users/robunderwood/workspace/cllied/target/cljapplied-0.1.0-SNAPSHOT-standalone.jar
+$ java -jar   /Users/robunderwood/workspace/cllied/target/cljapplied-0.1.0-SNAPSHOT-standalone.jar
 
-  Clojure 1.7.0
-  user=>  (require 'ch1.validate)
-  nil
-  user=> (in-ns 'ch1.validate)
-  #object[clojure.lang.Namespace 0x46b61c56 "ch1.validate"]
-  ch1.validate=> (in-ns 'user)
-  #object[clojure.lang.Namespace 0xbcef303 "user"]
-  user=>
+Clojure 1.7.0
+user=>  (require 'ch1.validate)
+nil
+user=> (in-ns 'ch1.validate)
+#object[clojure.lang.Namespace 0x46b61c56 "ch1.validate"]
+ch1.validate=> (in-ns 'user)
+#object[clojure.lang.Namespace 0xbcef303 "user"]
+user=>
 ```
-
-
 
 
 ### Syntax
@@ -574,10 +573,10 @@ user=> (sub3 5)
 
 ## Destructuring in Clojure
 ```
-  user=> (let [[head & tail] [1 2 3]] head)
-  1
-  user=> (let [[head & tail] [1 2 3]] tail)
-  (2 3)
+user=> (let [[head & tail] [1 2 3]] head)
+1
+user=> (let [[head & tail] [1 2 3]] tail)
+(2 3)
 ```
 
 
