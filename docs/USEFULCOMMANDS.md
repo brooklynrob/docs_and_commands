@@ -2,24 +2,9 @@
 id: usefulcommands
 title: Useful Commands
 sidebar_label: Useful Commands
+slug: /usefulcommands
 ---
 
-
-## Jupyter-OCaml
-```
-cp /Users/robunderwood/.opam/4.07.1/share/jupyter/kernel.json /Users/robunderwood/.opam/jupyter-ocaml/share/jupyter/kernel.json
-
-cp jupyter-ocaml robunderwood$ cp /Users/robunderwood/.opam/4.07.1/share/jupyter/kernel.sh /Users/robunderwood/.opam/jupyter-ocaml/share/jupyter/kernel.sh
-```
-
-```
-ls -a ~/Library/Jupyter/kernels/ocaml-jupyter/
-```
-
-```
-brooklynrobmac:jupyter-ocaml robunderwood$ ls /usr/local/share/jupyter/kernels/ocaml-jupyter/
-kernel.json	kernel.sh
-```
 
 
 ## This Site (Docusarus)
@@ -172,7 +157,8 @@ Switch to char mode (term-char-mode). Do nothing if already in char mode.
 
 ```
 emacs 4 pane setup for OCaml
-![Emacs 4 pane setup for OCaml](assets/emacs-setup-ocaml.png)
+```
+![Emacs 4 pane setup for OCaml](/img/emacs-setup-ocaml.png)
 
 
 ### Language Specific Emacs Stuff
@@ -495,6 +481,23 @@ val tst_sym : Sexplib0.Sexp.t = ((foo 1) (bar 1))
 ### ReasonML
 #### Reprocessing
 * https://github.com/bsansouci/reprocessing-example
+
+## Jupyter-OCaml
+From Sept 2020
+```
+cp /Users/robunderwood/.opam/4.07.1/share/jupyter/kernel.json /Users/robunderwood/.opam/jupyter-ocaml/share/jupyter/kernel.json
+
+cp jupyter-ocaml robunderwood$ cp /Users/robunderwood/.opam/4.07.1/share/jupyter/kernel.sh /Users/robunderwood/.opam/jupyter-ocaml/share/jupyter/kernel.sh
+```
+
+```
+ls -a ~/Library/Jupyter/kernels/ocaml-jupyter/
+```
+
+```
+brooklynrobmac:jupyter-ocaml robunderwood$ ls /usr/local/share/jupyter/kernels/ocaml-jupyter/
+kernel.json	kernel.sh
+```
 
 
 ## Clojure
