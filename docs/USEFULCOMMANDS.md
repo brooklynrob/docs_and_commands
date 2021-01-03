@@ -31,11 +31,11 @@ ssh robunderwood@127.0.0.1 -p 2222
 ## [Google Cloud](https://console.cloud.google.com/compute/instances?project=elevated-watch-254300&instancessize=50&cloudshell=true)
 
 ### Managing [Google Cloud Instances](https://console.cloud.google.com/compute/instances?project=elevated-watch-254300&instancessize=50&cloudshell=true)
-![Key Management in Google Cloud](assets/gcloud-instance-management-screen.png)
+
 
 
 ### [Key Management](https://console.cloud.google.com/compute/metadata/sshKeys?project=elevated-watch-254300&folder&organizationId)
-![Key Management in Google Cloud](assets/gcloud-key-management.png)
+
 
 
 
@@ -84,7 +84,6 @@ Activate menubar   M-`
 * Move to start of buffer M-< (M-Shift-,) 
 * Move to end of buffer M-> (M-Shift-.) 
 * Clear screen and redisplay all the text, moving the text around the cursor to the center of the screen. C-l	 (That's CONTROL-L, not CONTROL-1.)
-```
 
 ### Text editing
 Killing and Deleting   backward   forward
@@ -147,17 +146,15 @@ Start Term Mode: `M-x term`
 
 Switching modes in term mode - (from [GNU](https://www.gnu.org/software/emacs/manual/html_node/emacs/Term-Mode.html)):
 
-```
-C-c C-j
+* `C-c C-j`:
 Switch to line mode (term-line-mode). Do nothing if already in line mode.
 
 
-C-c C-k
-Switch to char mode (term-char-mode). Do nothing if already in char mode.
+* `C-c C-k`: Switch to char mode (term-char-mode). Do nothing if already in char mode.
 
-```
-emacs 4 pane setup for OCaml
-```
+
+### emacs 4 pane setup for OCaml
+
 ![Emacs 4 pane setup for OCaml](/img/emacs-setup-ocaml.png)
 
 
@@ -175,10 +172,8 @@ From folder in which quicklisp.lisp exists: `clisp -i ./quicklisp.lisp`
 * `(ql:add-to-init-file)`
 * `(ql:quickload "quicklisp-slime-helper")`
 
-![Writing valid Lisp (S-Expressions) in buffer (top); help window bottom](assets/emacs-lisptopwindow-helpbottom.png)
 
 #### Using slime
-![slime-compile-region](assets/slime-compile-region.png)
 * `M-x slime-compile-region`
 
 
@@ -259,7 +254,17 @@ https://stackoverflow.com/questions/4608187/how-to-reload-bash-profile-from-the-
 
 * (Hard) reset to previous commit
 	* `git reset --hard <commithash>`
+		* See https://stackoverflow.com/questions/4372435/how-can-i-rollback-a-github-repository-to-a-specific-commit
 
+``` brooklynrobmac:alloy robunderwood$ git reset --hard bb8fc1a447cacf1dfb0271a4c9b86c288ddc4c70
+			HEAD is now at bb8fc1a fix finos watermark (#254)
+			brooklynrobmac:alloy robunderwood$ git push -f origin master
+			Total 0 (delta 0), reused 0 (delta 0)
+			To github.com:brooklynrob/alloy.git
+			+ db291d8...bb8fc1a master -> master (forced update)
+```
+* Remove a file from a pull request / go back to a particular file version
+	* https://stackoverflow.com/questions/39459467/remove-a-modified-file-from-pull-request
 * Add upstream repository
 	* `git remote add upstream git@github.com:sketch-city/harvey-api.git`
 
@@ -274,6 +279,25 @@ https://stackoverflow.com/questions/4608187/how-to-reload-bash-profile-from-the-
 
 * Delete remote branch
 	* `git push origin --delete rfu001`
+
+* Pull from upstream flow
+	* `git remote add upstream git@github.com:finos/alloy`
+	* `git pull upstream master`
+	* `git merge upstream/master`
+
+
+# Python
+* check version: `python --version`
+
+## pyenv
+* Maintain multiple versions of python (similar to nvm or opam switch)
+
+## pipenv
+* https://realpython.com/pipenv-guide/
+* virtual envs created by pipenv are in `/Users/robunderwood/.local/share/virtualenvs/`
+
+![pyenv_shortcut_pipenv.png](/img/pyenv_shortcut_pipenv.png)
+
 
 
 ## Python
@@ -326,11 +350,12 @@ print(df_csv.columns)
 * list installed and avail releases of OCaml
 	* `opam switch`
 	* Example: `open switch realworld`
+![opam switch](/img/opam_switch_list_pwd.png)
 * Put environment in synch: ``eval `opam config env` ``
 
 ### Location of ocaml compiliers
 * `/Users/robunderwood/.opam`
-  * 
+  * e.g., `/Users/robunderwood/.opam/4.11.1`
 
 ### Location of ocaml config file
 * `~/.ocamlinit`
@@ -484,6 +509,7 @@ val tst_sym : Sexplib0.Sexp.t = ((foo 1) (bar 1))
 
 ## Jupyter-OCaml
 From Sept 2020
+See https://github.com/akabe/ocaml-jupyter
 ```
 cp /Users/robunderwood/.opam/4.07.1/share/jupyter/kernel.json /Users/robunderwood/.opam/jupyter-ocaml/share/jupyter/kernel.json
 
