@@ -9,7 +9,7 @@ slug: /usefulcommands
 
 ## This Site (Docusarus)
 ### Start the Site
-In `/Users/robunderwood/Documents/workspace/DOCS`, run:
+In `/Users/$USER/Documents/workspace/DOCS`, run:
 ``` yarn run start```
 
 ## VirtualBox
@@ -25,7 +25,7 @@ In `/Users/robunderwood/Documents/workspace/DOCS`, run:
 
 #### connect
 ```
-ssh robunderwood@127.0.0.1 -p 2222
+ssh <username>@127.0.0.1 -p 2222
 ```
 
 ## [Google Cloud](https://console.cloud.google.com/compute/instances?project=elevated-watch-254300&instancessize=50&cloudshell=true)
@@ -256,13 +256,26 @@ https://stackoverflow.com/questions/4608187/how-to-reload-bash-profile-from-the-
 	* `git reset --hard <commithash>`
 		* See https://stackoverflow.com/questions/4372435/how-can-i-rollback-a-github-repository-to-a-specific-commit
 
-``` brooklynrobmac:alloy robunderwood$ git reset --hard bb8fc1a447cacf1dfb0271a4c9b86c288ddc4c70
-			HEAD is now at bb8fc1a fix finos watermark (#254)
-			brooklynrobmac:alloy robunderwood$ git push -f origin master
-			Total 0 (delta 0), reused 0 (delta 0)
-			To github.com:brooklynrob/alloy.git
-			+ db291d8...bb8fc1a master -> master (forced update)
+``` 
+$ git reset --hard bb8fc1a447cacf1dfb0271a4c9b86c288ddc4c70
+HEAD is now at bb8fc1a fix finos watermark (#254)
+$ git push -f origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:brooklynrob/alloy.git
++ db291d8...bb8fc1a master -> master (forced update)
 ```
+
+```
+brooklynrobmac:legend robunderwood$ git reset --hard 29617168c25fc509a5a9ded89ba47e99e2452f22
+HEAD is now at 2961716 Update README.md
+brooklynrobmac:legend robunderwood$ git push -f origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:brooklynrob/legend.git
+ + ec44ae3...2961716 master -> master (forced update)
+brooklynrobmac:legend robunderwood$
+```
+
+
 * Remove a file from a pull request / go back to a particular file version
 	* https://stackoverflow.com/questions/39459467/remove-a-modified-file-from-pull-request
 * Add upstream repository
@@ -295,7 +308,7 @@ https://stackoverflow.com/questions/4608187/how-to-reload-bash-profile-from-the-
 
 ## pipenv
 * https://realpython.com/pipenv-guide/
-* virtual envs created by pipenv are in `/Users/robunderwood/.local/share/virtualenvs/`
+* virtual envs created by pipenv are in `/Users/$USER/.local/share/virtualenvs/`
 
 ![pyenv_shortcut_pipenv.png](/img/pyenv_shortcut_pipenv.png)
 
@@ -355,8 +368,8 @@ print(df_csv.columns)
 * Put environment in synch: ``eval `opam config env` ``
 
 ### Location of ocaml compiliers
-* `/Users/robunderwood/.opam`
-  * e.g., `/Users/robunderwood/.opam/4.11.1`
+* `/Users/$USER/.opam`
+  * e.g., `/Users/$USER.opam/4.11.1`
 
 ### Location of ocaml config file
 * `~/.ocamlinit`
@@ -403,9 +416,10 @@ utop # List.map ~f:(fun x -> x + 1) [5;6];;
 ```
 
 The following (from [problem 8 in OCaml 99 problems](https://ocaml.org/learn/tutorials/99problems.html)) works with the stdlib:
-```utop # let rec compress = function
-    | a :: (b :: _ as t) -> if a = b then compress t else a :: compress t
-    | smaller -> smaller;;
+```
+utop # let rec compress = function
+	| a :: (b :: _ as t) -> if a = b then compress t else a :: compress t
+	| smaller -> smaller;;
 val compress : 'a list -> 'a list = <fun>
 
 utop # compress ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"e";"e";"e";"e"];;
@@ -512,9 +526,9 @@ val tst_sym : Sexplib0.Sexp.t = ((foo 1) (bar 1))
 From Sept 2020
 See https://github.com/akabe/ocaml-jupyter
 ```
-cp /Users/robunderwood/.opam/4.07.1/share/jupyter/kernel.json /Users/robunderwood/.opam/jupyter-ocaml/share/jupyter/kernel.json
+cp /Users/$USER/.opam/4.07.1/share/jupyter/kernel.json /Users/$USER/.opam/jupyter-ocaml/share/jupyter/kernel.json
 
-cp jupyter-ocaml robunderwood$ cp /Users/robunderwood/.opam/4.07.1/share/jupyter/kernel.sh /Users/robunderwood/.opam/jupyter-ocaml/share/jupyter/kernel.sh
+cp jupyter-ocaml $USER cp /Users/$USER/.opam/4.07.1/share/jupyter/kernel.sh /Users/$USER/.opam/jupyter-ocaml/share/jupyter/kernel.sh
 ```
 
 ```
@@ -522,16 +536,25 @@ ls -a ~/Library/Jupyter/kernels/ocaml-jupyter/
 ```
 
 ```
-brooklynrobmac:jupyter-ocaml robunderwood$ ls /usr/local/share/jupyter/kernels/ocaml-jupyter/
+brooklynrobmac:jupyter-ocaml $USER$ ls /usr/local/share/jupyter/kernels/ocaml-jupyter/
 kernel.json	kernel.sh
 ```
+
+
+## Java
+### See versions installed 
+`/usr/libexec/java_home -V`
+
+### jenv
+#### add a version
+`jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home`
 
 
 ## Clojure
 ```
 $ lein uberjar
 
-$ java -jar   /Users/robunderwood/workspace/cllied/target/cljapplied-0.1.0-SNAPSHOT-standalone.jar
+$ java -jar   /Users/$USER/workspace/cllied/target/cljapplied-0.1.0-SNAPSHOT-standalone.jar
 
 Clojure 1.7.0
 user=>  (require 'ch1.validate)
